@@ -1,0 +1,6 @@
+framework module i18next {
+  umbrella header "i18next-umbrella.h"
+
+  export *
+  module * { export * }
+}

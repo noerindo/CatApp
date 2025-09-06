@@ -1,0 +1,81 @@
+PODS:
+  - Action (5.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - Alamofire (5.10.2)
+  - Differentiator (5.0.0)
+  - i18next (1.0.1)
+  - Kingfisher (7.12.0)
+  - Realm (10.54.5):
+    - Realm/Headers (= 10.54.5)
+  - Realm/Headers (10.54.5)
+  - RealmSwift (10.54.5):
+    - Realm (= 10.54.5)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SideMenu (6.5.0)
+  - SkeletonView (1.30.4)
+  - SnackBar.swift (0.1.0):
+    - SnapKit
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Action
+  - Alamofire (~> 5.8)
+  - i18next
+  - Kingfisher (~> 7.0)
+  - RealmSwift (~> 10)
+  - RxCocoa (= 6.5.0)
+  - RxDataSources
+  - RxSwift (= 6.5.0)
+  - SideMenu
+  - SkeletonView
+  - SnackBar.swift
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Action
+    - Alamofire
+    - Differentiator
+    - i18next
+    - Kingfisher
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - SideMenu
+    - SkeletonView
+    - SnackBar.swift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  i18next: 5f3d8974d14e145edd8d735057ac33c7ee3ec184
+  Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
+  Realm: ac6ab7d43b76db2bdb48bbd097019bb621d860b8
+  RealmSwift: 7c258367cc498594aa989b7d9620989a276ad7f4
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+  SnackBar.swift: 79ea4df13ea9e6633137dd6acbd490534d26440d
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: f99e780d75d7da0006e9b8db076ea9f02f228265
+
+COCOAPODS: 1.16.2

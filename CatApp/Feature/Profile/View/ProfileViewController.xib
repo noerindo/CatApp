@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="CatApp" customModuleProvider="target">
+            <connections>
+                <outlet property="logoutButton" destination="OJE-0C-hRG" id="lYw-BC-oQs"/>
+                <outlet property="nameLabel" destination="8i2-HM-0ne" id="hJz-3d-fqM"/>
+                <outlet property="nameUserLabel" destination="8i2-HM-0ne" id="4US-Nj-JJX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoCat" translatesAutoresizingMaskIntoConstraints="NO" id="KHu-Ao-Rnf">
+                    <rect key="frame" x="151.66666666666666" y="59" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KHu-Ao-Rnf" secondAttribute="height" multiplier="1:1" id="XfV-mO-Et8"/>
+                        <constraint firstAttribute="width" constant="90" id="cgm-Vh-2et"/>
+                    </constraints>
+                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nn-hX-gHc">
+                    <rect key="frame" x="196.66666666666666" y="238" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indah Nurindo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8i2-HM-0ne">
+                    <rect key="frame" x="0.0" y="199.33333333333334" width="393" height="20.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salam Kenal Pencinta Kucing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bo2-xu-aBc">
+                    <rect key="frame" x="10" y="169" width="373" height="20.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJE-0C-hRG">
+                    <rect key="frame" x="20" y="747" width="353" height="31"/>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <color key="tintColor" systemColor="systemBackgroundColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Logout">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="goLogout:" destination="-1" eventType="touchUpInside" id="VCo-AI-7cV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OJE-0C-hRG" secondAttribute="bottom" constant="40" id="3zo-uN-Ttb"/>
+                <constraint firstItem="8i2-HM-0ne" firstAttribute="top" secondItem="Bo2-xu-aBc" secondAttribute="bottom" constant="10" id="FVA-wU-Zcb"/>
+                <constraint firstItem="OJE-0C-hRG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="GtV-NG-L2Y"/>
+                <constraint firstItem="KHu-Ao-Rnf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JwY-pN-STF"/>
+                <constraint firstItem="Bo2-xu-aBc" firstAttribute="centerX" secondItem="KHu-Ao-Rnf" secondAttribute="centerX" id="NFT-2u-A9y"/>
+                <constraint firstItem="8i2-HM-0ne" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NHm-aT-dgh"/>
+                <constraint firstItem="8nn-hX-gHc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="238" id="SZU-hv-F09"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bo2-xu-aBc" secondAttribute="trailing" constant="10" id="h2s-pg-Hsg"/>
+                <constraint firstItem="8i2-HM-0ne" firstAttribute="centerX" secondItem="8nn-hX-gHc" secondAttribute="centerX" id="lDO-tf-J1A"/>
+                <constraint firstItem="Bo2-xu-aBc" firstAttribute="top" secondItem="KHu-Ao-Rnf" secondAttribute="bottom" constant="20" id="pb8-Pd-fVE"/>
+                <constraint firstItem="Bo2-xu-aBc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="uaz-EM-rnO"/>
+                <constraint firstItem="KHu-Ao-Rnf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xTm-wT-sKF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8i2-HM-0ne" secondAttribute="trailing" id="xca-fr-uuF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OJE-0C-hRG" secondAttribute="trailing" constant="20" id="yd4-Ov-1Uc"/>
+            </constraints>
+            <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LogoCat" width="225" height="225"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

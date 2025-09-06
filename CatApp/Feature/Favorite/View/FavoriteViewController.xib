@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteViewController" customModule="CatApp" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="bh2-rA-IbE" id="Q6y-Yb-sR9"/>
+                <outlet property="titleLabel" destination="0cd-b4-B8A" id="KOc-6l-dF5"/>
+                <outlet property="toggleButton" destination="5KN-Uo-qet" id="LOV-ap-0cY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KN-Uo-qet">
+                    <rect key="frame" x="338" y="59" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5KN-Uo-qet" secondAttribute="height" multiplier="1:1" id="3M8-vZ-8gH"/>
+                        <constraint firstAttribute="height" constant="35" id="H53-rX-3EL"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="circle.grid.2x2" catalog="system"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Cat Meong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-b4-B8A">
+                    <rect key="frame" x="20" y="59" width="162" height="29"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bh2-rA-IbE">
+                    <rect key="frame" x="20" y="108" width="353" height="710"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g7f-b8-5wC">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="5KN-Uo-qet" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E03-tt-hpH"/>
+                <constraint firstItem="bh2-rA-IbE" firstAttribute="top" secondItem="0cd-b4-B8A" secondAttribute="bottom" constant="20" id="Hn6-fz-WFF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bh2-rA-IbE" secondAttribute="trailing" constant="20" id="V6m-HR-v2R"/>
+                <constraint firstItem="0cd-b4-B8A" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Z8s-Ax-mfM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5KN-Uo-qet" secondAttribute="trailing" constant="20" id="elL-Qo-9dv"/>
+                <constraint firstItem="0cd-b4-B8A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pKG-7x-eqL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bh2-rA-IbE" secondAttribute="bottom" id="qLz-1o-z8e"/>
+                <constraint firstItem="bh2-rA-IbE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="typ-FU-DNV"/>
+            </constraints>
+            <point key="canvasLocation" x="117" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle.grid.2x2" catalog="system" width="128" height="111"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
