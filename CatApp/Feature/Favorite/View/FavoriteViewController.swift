@@ -90,4 +90,5 @@ extension FavoriteViewController: UICollectionViewDelegateFlowLayout, UICollecti
         detailVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(detailVC, animated: true)
     }
+    
 }
