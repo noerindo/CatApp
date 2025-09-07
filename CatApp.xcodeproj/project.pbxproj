@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1785BAC8763934152109177D /* Pods_CatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB720D66E79A923582C548 /* Pods_CatApp.framework */; };
+		36B8C8052E6D1A2F00FECC2B /* Pods_CatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB720D66E79A923582C548 /* Pods_CatApp.framework */; };
+		36B8C8062E6D1A2F00FECC2B /* Pods_CatApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB720D66E79A923582C548 /* Pods_CatApp.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		99E7BB94931B343DD41234F5 /* Pods_CatAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B57001896070D13166F3DA9 /* Pods_CatAppTests.framework */; };
 		D6723F5A75E3891F8EFE6207 /* Pods_CatApp_CatAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1EF6F7DE2204F3EE5BA827 /* Pods_CatApp_CatAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -29,8 +30,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		36B8C8072E6D1A2F00FECC2B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				36B8C8062E6D1A2F00FECC2B /* Pods_CatApp.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		21AEA82C3FE8CA68CBAB2583 /* Pods-CatAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CatAppTests/Pods-CatAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3637F8982E6D02D00004DF7E /* BCColorDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BCColorDemo.xcodeproj; sourceTree = "<group>"; };
 		3644CEBD2E6A78E000E7D41F /* CatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3644CED32E6A78E200E7D41F /* CatAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3644CEDD2E6A78E200E7D41F /* CatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,22 +60,9 @@
 		FA1EF6F7DE2204F3EE5BA827 /* Pods_CatApp_CatAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatApp_CatAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3644CEE52E6A78E200E7D41F /* Exceptions for "CatApp" folder in "CatApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Resources/Info.plist,
-			);
-			target = 3644CEBC2E6A78E000E7D41F /* CatApp */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3644CEBF2E6A78E000E7D41F /* CatApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				3644CEE52E6A78E200E7D41F /* Exceptions for "CatApp" folder in "CatApp" target */,
-			);
 			path = CatApp;
 			sourceTree = "<group>";
 		};
@@ -80,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1785BAC8763934152109177D /* Pods_CatApp.framework in Frameworks */,
+				36B8C8052E6D1A2F00FECC2B /* Pods_CatApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +117,13 @@
 				DD9531D995D87E2A0E65EE8A /* Pods-CatAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3637F8A02E6D02D00004DF7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3644CEB42E6A78E000E7D41F = {
@@ -159,7 +169,8 @@
 				3644CEB92E6A78E000E7D41F /* Sources */,
 				3644CEBA2E6A78E000E7D41F /* Frameworks */,
 				3644CEBB2E6A78E000E7D41F /* Resources */,
-				30E76587E133A6E11A509667 /* [CP] Embed Pods Frameworks */,
+				BB54F49CD1E1A623AEE6EDA1 /* [CP] Embed Pods Frameworks */,
+				36B8C8072E6D1A2F00FECC2B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,7 +214,7 @@
 				3644CED92E6A78E200E7D41F /* Sources */,
 				3644CEDA2E6A78E200E7D41F /* Frameworks */,
 				3644CEDB2E6A78E200E7D41F /* Resources */,
-				371B9FA4018C8C5A1C360305 /* [CP] Embed Pods Frameworks */,
+				868BAE218964CEB9D84D1A22 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +264,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3644CEBE2E6A78E000E7D41F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3637F8A02E6D02D00004DF7E /* Products */;
+					ProjectRef = 3637F8982E6D02D00004DF7E /* BCColorDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3644CEBC2E6A78E000E7D41F /* CatApp */,
@@ -309,23 +326,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		30E76587E133A6E11A509667 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3672C5E4517F657BFA646B6B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,7 +348,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		371B9FA4018C8C5A1C360305 /* [CP] Embed Pods Frameworks */ = {
+		868BAE218964CEB9D84D1A22 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -385,6 +385,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB54F49CD1E1A623AEE6EDA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
