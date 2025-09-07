@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import Action
+import BCColor
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var greetingLabel: UILabel!
@@ -19,6 +20,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var languageSwitch: UISwitch!
     @IBOutlet weak var laguageLabel: UILabel!
     @IBOutlet weak var bgLanguangeView: UIView!
+    @IBOutlet weak var photoImageView: UIImageView!
     
     private let viewModel = ProfileViewModel()
     private let disposeBag = DisposeBag()
@@ -57,17 +59,14 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func changeColorTapped(_ sender: UIButton) {
-        let color = UIColor(
-            red: CGFloat.random(in: 0...1),
-            green: CGFloat.random(in: 0...1),
-            blue: CGFloat.random(in: 0...1),
-            alpha: 1.0
-        )
+        let colors = getRandomBCColor(for: photoImageView)
         
         UIView.animate(withDuration: 0.5) {
-            self.bgLanguangeView.backgroundColor = color
+            self.bgLanguangeView.backgroundColor = colors.bgColor
+            self.photoImageView.backgroundColor = colors.imageColor
         }
     }
+    
     @IBAction func goLogout(_ sender: Button) {
         viewModel.logout()
         moveToLogin()
@@ -88,6 +87,48 @@ class ProfileViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: workItem)
+    }
+    
+}
+
+extension ProfileViewController {
+    
+    func getRandomBCColor(for imageView: UIImageView?) -> (bgColor: UIColor, imageColor: UIColor) {
+        let randomMode = Int.random(in: 0...3)
+        var bgColor: UIColor
+        var imageColor: UIColor
+        
+        switch randomMode {
+        case 0:
+            let hexColors = ["#3498db", "#e74c3c", "#2ecc71", "#f1c40f"]
+            bgColor = UIColor.colorWithHex(hexColors.randomElement()!)!
+            imageColor = bgColor
+        case 1:
+            let gradientColors = [UIColor.colorWithHex("#3498db")!, UIColor.colorWithHex("#e74c3c")!]
+            bgColor = UIColor.gradientColor(CGPoint(x: 0, y: 0),
+                                            endPoint: CGPoint(x: 1, y: 1),
+                                            frame: bgLanguangeView.bounds,
+                                            colors: gradientColors)!
+            imageColor = bgColor
+        case 2:
+            let baseColor = UIColor.colorWithHex("#2ecc71")!
+            bgColor = Bool.random() ? baseColor.lightenByPercentage(0.2) : baseColor.darkenByPercentage(0.2)
+            imageColor = bgColor
+        case 3:
+            if let image = imageView?.image {
+                let colors = image.getColors()
+                bgColor = colors.primaryColor
+                imageColor = colors.secondaryColor
+            } else {
+                bgColor = UIColor.colorWithHex("#3498db")!
+                imageColor = bgColor
+            }
+        default:
+            bgColor = UIColor.colorWithHex("#3498db")!
+            imageColor = bgColor
+        }
+        
+        return (bgColor, imageColor)
     }
     
 }

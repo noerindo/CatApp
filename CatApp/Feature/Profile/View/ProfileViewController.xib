@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="CatApp" customModuleProvider="target">
             <connections>
-                <outlet property="bgLanguangeView" destination="ltn-XQ-ug8" id="sN6-Pc-CKJ"/>
+                <outlet property="bgLanguangeView" destination="ltn-XQ-ug8" id="CGQ-DJ-xtd"/>
                 <outlet property="changeColorButton" destination="xyJ-QC-tUp" id="379-tH-SUm"/>
                 <outlet property="descLabel" destination="eLM-WX-90i" id="7Sa-Ke-z3Z"/>
                 <outlet property="greetingLabel" destination="Bo2-xu-aBc" id="fg4-dE-ZEJ"/>
@@ -20,6 +20,7 @@
                 <outlet property="logoutButton" destination="OJE-0C-hRG" id="lYw-BC-oQs"/>
                 <outlet property="nameLabel" destination="8i2-HM-0ne" id="hJz-3d-fqM"/>
                 <outlet property="nameUserLabel" destination="8i2-HM-0ne" id="4US-Nj-JJX"/>
+                <outlet property="photoImageView" destination="KHu-Ao-Rnf" id="OGB-hg-fqb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -138,13 +139,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

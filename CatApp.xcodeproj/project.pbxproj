@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		365BCB612E6D838B006F86C5 /* BCColorSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 365BCB602E6D838B006F86C5 /* BCColorSPM */; };
 		36B8C8052E6D1A2F00FECC2B /* Pods_CatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB720D66E79A923582C548 /* Pods_CatApp.framework */; };
 		36B8C8062E6D1A2F00FECC2B /* Pods_CatApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB720D66E79A923582C548 /* Pods_CatApp.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		99E7BB94931B343DD41234F5 /* Pods_CatAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B57001896070D13166F3DA9 /* Pods_CatAppTests.framework */; };
@@ -64,7 +65,7 @@
 		368590312E6D720700D3C4DD /* Exceptions for "CatApp" folder in "CatApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Resources/Info.plist,
+				Resource/Info.plist,
 			);
 			target = 3644CEBC2E6A78E000E7D41F /* CatApp */;
 		};
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				365BCB612E6D838B006F86C5 /* BCColorSPM in Frameworks */,
 				36B8C8052E6D1A2F00FECC2B /* Pods_CatApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +277,7 @@
 			mainGroup = 3644CEB42E6A78E000E7D41F;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				368590322E6D730300D3C4DD /* XCRemoteSwiftPackageReference "BCColor" */,
+				365BCB5F2E6D8352006F86C5 /* XCLocalSwiftPackageReference "../../Downloads/BCColorSPM" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3644CEBE2E6A78E000E7D41F /* Products */;
@@ -478,7 +480,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93VTU92YDK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CatApp/Resources/Info.plist;
+				INFOPLIST_FILE = CatApp/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -508,7 +510,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93VTU92YDK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CatApp/Resources/Info.plist;
+				INFOPLIST_FILE = CatApp/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -766,16 +768,19 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		368590322E6D730300D3C4DD /* XCRemoteSwiftPackageReference "BCColor" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/noerindo/BCColor";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		365BCB5F2E6D8352006F86C5 /* XCLocalSwiftPackageReference "../../Downloads/BCColorSPM" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../Downloads/BCColorSPM;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		365BCB602E6D838B006F86C5 /* BCColorSPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BCColorSPM;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3644CEB52E6A78E000E7D41F /* Project object */;
 }
