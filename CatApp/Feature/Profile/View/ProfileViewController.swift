@@ -8,14 +8,12 @@
 import UIKit
 import RxSwift
 import Action
-import BCColor
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var nameUserLabel: UILabel!
-    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var changeColorButton: UIButton!
     @IBOutlet weak var languageSwitch: UISwitch!
@@ -59,11 +57,15 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func changeColorTapped(_ sender: UIButton) {
-        guard let image = UIImage(named: "colorPalette") else { return }
-        let colors = image.getColors()
-        let newColor = colors.primaryColor ?? colors.backgroundColor
+        let color = UIColor(
+            red: CGFloat.random(in: 0...1),
+            green: CGFloat.random(in: 0...1),
+            blue: CGFloat.random(in: 0...1),
+            alpha: 1.0
+        )
+        
         UIView.animate(withDuration: 0.5) {
-            self.cardView.backgroundColor = newColor
+            self.bgLanguangeView.backgroundColor = color
         }
     }
     @IBAction func goLogout(_ sender: Button) {

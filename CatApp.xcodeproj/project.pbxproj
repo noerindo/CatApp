@@ -60,25 +60,32 @@
 		FA1EF6F7DE2204F3EE5BA827 /* Pods_CatApp_CatAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatApp_CatAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		368590312E6D720700D3C4DD /* Exceptions for "CatApp" folder in "CatApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = 3644CEBC2E6A78E000E7D41F /* CatApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3644CEBF2E6A78E000E7D41F /* CatApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				368590312E6D720700D3C4DD /* Exceptions for "CatApp" folder in "CatApp" target */,
 			);
 			path = CatApp;
 			sourceTree = "<group>";
 		};
 		3644CED62E6A78E200E7D41F /* CatAppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = CatAppTests;
 			sourceTree = "<group>";
 		};
 		3644CEE02E6A78E200E7D41F /* CatAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = CatAppUITests;
 			sourceTree = "<group>";
 		};
@@ -268,7 +275,7 @@
 			mainGroup = 3644CEB42E6A78E000E7D41F;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				36858FB42E6D6A1300D3C4DD /* XCRemoteSwiftPackageReference "BCColor" */,
+				368590322E6D730300D3C4DD /* XCRemoteSwiftPackageReference "BCColor" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3644CEBE2E6A78E000E7D41F /* Products */;
@@ -365,9 +372,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CatApp-CatAppUITests/Pods-CatApp-CatAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CatApp-CatAppUITests/Pods-CatApp-CatAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -404,9 +415,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -752,11 +767,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		36858FB42E6D6A1300D3C4DD /* XCRemoteSwiftPackageReference "BCColor" */ = {
+		368590322E6D730300D3C4DD /* XCRemoteSwiftPackageReference "BCColor" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/noerindo/BCColor.git";
+			repositoryURL = "https://github.com/noerindo/BCColor";
 			requirement = {
-				branch = main;
+				branch = master;
 				kind = branch;
 			};
 		};
