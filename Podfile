@@ -28,6 +28,7 @@ target 'CatApp' do
   pod 'SideMenu'
   pod 'SkeletonView'
   pod 'i18next'
+  pod 'BCColor'
   
   
   

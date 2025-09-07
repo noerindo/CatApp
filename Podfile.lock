@@ -3,6 +3,7 @@ PODS:
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
   - Alamofire (5.10.2)
+  - BCColor (0.2)
   - Differentiator (5.0.0)
   - i18next (1.0.1)
   - Kingfisher (7.12.0)
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - Action
   - Alamofire (~> 5.8)
+  - BCColor
   - i18next
   - Kingfisher (~> 7.0)
   - RealmSwift (~> 10)
@@ -45,6 +47,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Action
     - Alamofire
+    - BCColor
     - Differentiator
     - i18next
     - Kingfisher
@@ -62,6 +65,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  BCColor: 2425540cb0da92795b81a1f15b5289a92279c9eb
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   i18next: 5f3d8974d14e145edd8d735057ac33c7ee3ec184
   Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
@@ -76,6 +80,6 @@ SPEC CHECKSUMS:
   SnackBar.swift: 79ea4df13ea9e6633137dd6acbd490534d26440d
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 9a7338ad49fd31688a6afeef17e658d3136945ee
+PODFILE CHECKSUM: 1f1759e8b1fd3dae186dec25cee33dc0d669b29d
 
 COCOAPODS: 1.16.2

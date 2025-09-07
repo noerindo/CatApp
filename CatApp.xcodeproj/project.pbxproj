@@ -63,16 +63,22 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3644CEBF2E6A78E000E7D41F /* CatApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = CatApp;
 			sourceTree = "<group>";
 		};
 		3644CED62E6A78E200E7D41F /* CatAppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = CatAppTests;
 			sourceTree = "<group>";
 		};
 		3644CEE02E6A78E200E7D41F /* CatAppUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = CatAppUITests;
 			sourceTree = "<group>";
 		};
@@ -261,6 +267,9 @@
 			);
 			mainGroup = 3644CEB42E6A78E000E7D41F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				36858FB42E6D6A1300D3C4DD /* XCRemoteSwiftPackageReference "BCColor" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3644CEBE2E6A78E000E7D41F /* Products */;
 			projectDirPath = "";
@@ -741,6 +750,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		36858FB42E6D6A1300D3C4DD /* XCRemoteSwiftPackageReference "BCColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/noerindo/BCColor.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 3644CEB52E6A78E000E7D41F /* Project object */;
 }

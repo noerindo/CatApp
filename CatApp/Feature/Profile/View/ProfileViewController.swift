@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 import Action
-import ColorSync
+import BCColor
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var greetingLabel: UILabel!
@@ -58,6 +58,14 @@ class ProfileViewController: UIViewController {
         setupTexts()
     }
     
+    @IBAction func changeColorTapped(_ sender: UIButton) {
+        guard let image = UIImage(named: "colorPalette") else { return }
+        let colors = image.getColors()
+        let newColor = colors.primaryColor ?? colors.backgroundColor
+        UIView.animate(withDuration: 0.5) {
+            self.cardView.backgroundColor = newColor
+        }
+    }
     @IBAction func goLogout(_ sender: Button) {
         viewModel.logout()
         moveToLogin()
