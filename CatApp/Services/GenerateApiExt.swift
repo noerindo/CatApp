@@ -52,7 +52,7 @@ public class GenerateApiExt: GenerateApiProtocol {
     private init() {}
     
     private let headers: HTTPHeaders = [
-           "x-api-key": ""
+           "x-api-key": "live_BrwJyXPCxoFXd0AVFwym5n4uU8SJrH144jXD1Hct3RzgHamWhVYmK4kjxHlRme2y"
        ]
     
     // MARK: Cats List

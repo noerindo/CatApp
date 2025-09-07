@@ -47,3 +47,7 @@ extension UIActivityIndicatorView {
         self.isHidden = true
     }
 }
+
+extension Notification.Name {
+    static let languageChanged = Notification.Name("languageChanged")
+}

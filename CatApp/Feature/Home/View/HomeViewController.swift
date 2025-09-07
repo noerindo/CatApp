@@ -45,13 +45,13 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
         let view = UIView()
         
         let label = UILabel()
-        label.text = "Kucing tidak ditemukan"
+        label.text = LocalizationManager.shared.t("not_found")
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         label.textColor = .darkGray
         
         let button = UIButton(type: .system)
-        button.setTitle("Kembali", for: .normal)
+        button.setTitle(LocalizationManager.shared.t("back"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         
         view.addSubview(label)
@@ -81,6 +81,9 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .languageChanged, object: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,6 +133,19 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
         emptyStateView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(languageDidChange), name: .languageChanged, object: nil
+            )
+    }
+    
+    @objc private func languageDidChange() {
+        setupTexts()
+    }
+    
+    func setupTexts() {
+        subLabel.text = LocalizationManager.shared.t("subLabelHome_")
+        searchBar.placeholder = LocalizationManager.shared.t("searchplaceholder_")
+        
     }
     
     private func setupSideMenu() {

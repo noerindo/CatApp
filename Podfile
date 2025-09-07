@@ -17,7 +17,7 @@ end
 
 
 target 'CatApp' do
-  platform :ios, '14.0'
+  platform :ios, '13.0'
   use_frameworks!
   network
   rx
@@ -27,7 +27,8 @@ target 'CatApp' do
   pod 'Kingfisher', '~> 7.0'
   pod 'SideMenu'
   pod 'SkeletonView'
-  pod 'i18next-ios', '~> 0.4'
+  pod 'i18next'
+  
   
   
   target 'CatAppTests' do
@@ -40,3 +41,4 @@ target 'CatApp' do
   end
   
 end
+

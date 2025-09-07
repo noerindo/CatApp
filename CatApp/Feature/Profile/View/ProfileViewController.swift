@@ -8,11 +8,19 @@
 import UIKit
 import RxSwift
 import Action
+import ColorSync
 
 class ProfileViewController: UIViewController {
+    @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var nameUserLabel: UILabel!
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var changeColorButton: UIButton!
+    @IBOutlet weak var languageSwitch: UISwitch!
+    @IBOutlet weak var laguageLabel: UILabel!
+    @IBOutlet weak var bgLanguangeView: UIView!
     
     private let viewModel = ProfileViewModel()
     private let disposeBag = DisposeBag()
@@ -20,7 +28,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         binding()
-        
+        setupUI()
     }
     
     private func binding() {
@@ -28,6 +36,26 @@ class ProfileViewController: UIViewController {
             .bind(to: nameLabel.rx.text)
             .disposed(by: disposeBag)
         viewModel.fetchUser()
+    }
+    
+    private func setupUI() {
+        languageSwitch.isOn = LocalizationManager.shared.currentLang == "en"
+        setupTexts()
+    }
+    
+    private func setupTexts() {
+        LocalizationManager.shared.toggleLanguage()
+        greetingLabel.text = LocalizationManager.shared.t("greeting_")
+        descLabel.text = LocalizationManager.shared.t("description_")
+        logoutButton.setTitle(LocalizationManager.shared.t("logout_"), for: .normal)
+        changeColorButton.setTitle(LocalizationManager.shared.t("changeColor_"), for: .normal)
+        laguageLabel.text = LocalizationManager.shared.t("language_")
+    }
+    
+    @IBAction func languageSwitchChanged(_ sender: UISwitch) {
+        LocalizationManager.shared.setLanguage(sender.isOn ? "en" : "id")
+        LocalizationManager.shared.loadJson(language: LocalizationManager.shared.currentLang)
+        setupTexts()
     }
     
     @IBAction func goLogout(_ sender: Button) {

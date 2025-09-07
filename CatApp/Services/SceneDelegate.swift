@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = SplashViewController()
         window?.makeKeyAndVisible()
+        LocalizationManager.shared.configure()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -11,6 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="CatApp" customModuleProvider="target">
             <connections>
+                <outlet property="bgLanguangeView" destination="ltn-XQ-ug8" id="sN6-Pc-CKJ"/>
+                <outlet property="cardView" destination="eLM-WX-90i" id="uVG-Co-ePK"/>
+                <outlet property="changeColorButton" destination="xyJ-QC-tUp" id="379-tH-SUm"/>
+                <outlet property="descLabel" destination="eLM-WX-90i" id="7Sa-Ke-z3Z"/>
+                <outlet property="greetingLabel" destination="Bo2-xu-aBc" id="fg4-dE-ZEJ"/>
+                <outlet property="laguageLabel" destination="UGo-aw-Hsk" id="x91-4Y-acD"/>
+                <outlet property="languageSwitch" destination="eSQ-SG-ite" id="5Nc-A9-YKl"/>
                 <outlet property="logoutButton" destination="OJE-0C-hRG" id="lYw-BC-oQs"/>
                 <outlet property="nameLabel" destination="8i2-HM-0ne" id="hJz-3d-fqM"/>
                 <outlet property="nameUserLabel" destination="8i2-HM-0ne" id="4US-Nj-JJX"/>
@@ -22,6 +29,10 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltn-XQ-ug8">
+                    <rect key="frame" x="16" y="59" width="361" height="393"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoCat" translatesAutoresizingMaskIntoConstraints="NO" id="KHu-Ao-Rnf">
                     <rect key="frame" x="151.66666666666666" y="59" width="90" height="90"/>
                     <constraints>
@@ -50,33 +61,70 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJE-0C-hRG">
                     <rect key="frame" x="20" y="747" width="353" height="31"/>
-                    <color key="backgroundColor" systemColor="systemRedColor"/>
-                    <color key="tintColor" systemColor="systemBackgroundColor"/>
+                    <color key="tintColor" systemColor="systemRedColor"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Logout">
+                    <buttonConfiguration key="configuration" style="filled" title="Logout">
                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="goLogout:" destination="-1" eventType="touchUpInside" id="VCo-AI-7cV"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyJ-QC-tUp">
+                    <rect key="frame" x="20" y="697" width="353" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Change Color"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Di sini, kamu bisa menikmati berbagai foto kucing yang lucu, menggemaskan, dan pastinya bisa membuat harimu lebih ceria." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLM-WX-90i">
+                    <rect key="frame" x="30" y="239.66666666666663" width="333" height="61"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSQ-SG-ite">
+                    <rect key="frame" x="172" y="651" width="51" height="31"/>
+                    <color key="onTintColor" systemColor="systemGreenColor"/>
+                    <connections>
+                        <action selector="languageSwitchChanged:" destination="-1" eventType="touchUpInside" id="UV1-yA-isR"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inggris" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGo-aw-Hsk">
+                    <rect key="frame" x="321" y="656.66666666666663" width="52" height="20.333333333333371"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="OJE-0C-hRG" firstAttribute="top" secondItem="xyJ-QC-tUp" secondAttribute="bottom" constant="15" id="2zd-9H-xrZ"/>
+                <constraint firstItem="ltn-XQ-ug8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3hZ-ic-9iD"/>
+                <constraint firstItem="ltn-XQ-ug8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3u5-ez-Sfr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OJE-0C-hRG" secondAttribute="bottom" constant="40" id="3zo-uN-Ttb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xyJ-QC-tUp" secondAttribute="trailing" constant="20" id="CtN-p4-mVg"/>
                 <constraint firstItem="8i2-HM-0ne" firstAttribute="top" secondItem="Bo2-xu-aBc" secondAttribute="bottom" constant="10" id="FVA-wU-Zcb"/>
                 <constraint firstItem="OJE-0C-hRG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="GtV-NG-L2Y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eLM-WX-90i" secondAttribute="trailing" constant="30" id="HZR-0P-BLU"/>
                 <constraint firstItem="KHu-Ao-Rnf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JwY-pN-STF"/>
                 <constraint firstItem="Bo2-xu-aBc" firstAttribute="centerX" secondItem="KHu-Ao-Rnf" secondAttribute="centerX" id="NFT-2u-A9y"/>
                 <constraint firstItem="8i2-HM-0ne" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NHm-aT-dgh"/>
+                <constraint firstAttribute="bottom" secondItem="ltn-XQ-ug8" secondAttribute="bottom" constant="400" id="PkS-dB-9JN"/>
                 <constraint firstItem="8nn-hX-gHc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="238" id="SZU-hv-F09"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UGo-aw-Hsk" secondAttribute="trailing" constant="20" id="X38-9f-k7K"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ltn-XQ-ug8" secondAttribute="trailing" constant="16" id="ZCM-of-e4d"/>
+                <constraint firstItem="eSQ-SG-ite" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gGl-4t-etM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bo2-xu-aBc" secondAttribute="trailing" constant="10" id="h2s-pg-Hsg"/>
+                <constraint firstItem="eLM-WX-90i" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="jpW-Wb-I4d"/>
+                <constraint firstItem="eLM-WX-90i" firstAttribute="top" secondItem="8i2-HM-0ne" secondAttribute="bottom" constant="20" id="k4V-ZJ-LDe"/>
                 <constraint firstItem="8i2-HM-0ne" firstAttribute="centerX" secondItem="8nn-hX-gHc" secondAttribute="centerX" id="lDO-tf-J1A"/>
+                <constraint firstItem="xyJ-QC-tUp" firstAttribute="top" secondItem="UGo-aw-Hsk" secondAttribute="bottom" constant="20" id="m0l-ux-olz"/>
+                <constraint firstItem="xyJ-QC-tUp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oua-O2-z0B"/>
                 <constraint firstItem="Bo2-xu-aBc" firstAttribute="top" secondItem="KHu-Ao-Rnf" secondAttribute="bottom" constant="20" id="pb8-Pd-fVE"/>
                 <constraint firstItem="Bo2-xu-aBc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="uaz-EM-rnO"/>
                 <constraint firstItem="KHu-Ao-Rnf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xTm-wT-sKF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8i2-HM-0ne" secondAttribute="trailing" id="xca-fr-uuF"/>
+                <constraint firstAttribute="bottom" secondItem="eSQ-SG-ite" secondAttribute="bottom" constant="170" id="xtr-7J-meR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OJE-0C-hRG" secondAttribute="trailing" constant="20" id="yd4-Ov-1Uc"/>
             </constraints>
             <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>
@@ -86,6 +134,12 @@
         <image name="LogoCat" width="225" height="225"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
