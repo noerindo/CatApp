@@ -67,7 +67,6 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
             $0.top.equalTo(label.snp.bottom).offset(12)
         }
         
-        view.isHidden = true
         button.addTarget(self, action: #selector(backToList), for: .touchUpInside)
         
         return view
@@ -95,7 +94,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
         collectionView.isSkeletonable = true
         collectionView.showAnimatedGradientSkeleton()
         view.isSkeletonable = true
-        setupEmptyStateView()
+        emptyStateView.isHidden = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.collectionView.stopSkeletonAnimation()
@@ -169,7 +168,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
                 self.collectionView.hideSkeleton()
                 
                 self.catsData.append(contentsOf: cats)
-                self.updateEmptyState(isEmpty: self.catsData.isEmpty)
+                self.updateEmptyState(isEmpty: cats.isEmpty)
                 self.collectionView.reloadData()
                 self.isFetchingMore = false
                 
@@ -188,7 +187,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
                 self.collectionView.hideSkeleton()
                 
                 self.searchCatsData = cats
-                self.updateEmptyState(isEmpty: self.catsData.isEmpty)
+                self.updateEmptyState(isEmpty: cats.isEmpty)
                 self.collectionView.reloadData()
             })
             .disposed(by: disposeBag)
@@ -216,13 +215,6 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
         layout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         collectionView.setCollectionViewLayout(layout, animated: true)
     }
-    
-    private func setupEmptyStateView() {
-          view.addSubview(emptyStateView)
-          emptyStateView.snp.makeConstraints { make in
-              make.edges.equalToSuperview()
-          }
-      }
     
     private func updateEmptyState(isEmpty: Bool) {
         emptyStateView.isHidden = !isEmpty
