@@ -11,7 +11,7 @@ import RxSwift
 
 protocol GenerateApiProtocol {
     func getCats(limit: Int, page: Int) -> Single<[CatBreedResponse]>
-    func getSearchCats(id: String, limit: Int) -> Single<[CatResponse]>
+    func getSearchCats(id: String) -> Single<[CatResponse]>
     func getDetail(id: String) -> Single<[CatResponse]>
 }
 
@@ -23,15 +23,15 @@ class endPointAPI {
     
     enum KeyAPI {
         case getCats(limit: Int, page: Int)
-        case getSearchCats(id: String, limit: Int)
+        case getSearchCats(id: String)
         case getDetail(id: String)
         
         func path() -> String {
             switch self {
             case .getCats(let limit, let page):
                 return "breeds?limit=\(limit)&page=\(page)"
-            case .getSearchCats(let id, let limit):
-                return "images/search?breed_ids=\(id)&limit=\(limit)"
+            case .getSearchCats(let id):
+                return "images/search?breed_ids=\(id)&limit=10"
             case .getDetail(id: let id):
                 return "images/search?breed_ids=\(id)"
             }
@@ -78,9 +78,9 @@ public class GenerateApiExt: GenerateApiProtocol {
     }
     
     // MARK: Search Cats by Breed
-    func getSearchCats(id: String, limit: Int) -> Single<[CatResponse]> {
+    func getSearchCats(id: String) -> Single<[CatResponse]> {
         return Single.create { single in
-            let url = endPointAPI.getFullURL(for: .getSearchCats(id: id, limit: limit))
+            let url = endPointAPI.getFullURL(for: .getSearchCats(id: id))
             
             let request = AF.request(url, method: .get, headers: self.headers)
                 .validate()

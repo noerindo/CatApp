@@ -103,8 +103,6 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
             }
             self.collectionView.reloadData()
         }
-        
-        viewModel.fetchCats(limit: 10, page: 1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,7 +133,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(languageDidChange), name: .languageChanged, object: nil
-            )
+        )
     }
     
     @objc private func languageDidChange() {
@@ -196,13 +194,13 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
         
         viewModel.isLoading
             .drive(onNext: { [weak self] loading in
-                guard let self = self else { return }
+                guard self != nil else { return }
             })
             .disposed(by: disposeBag)
         
         viewModel.errorMessage
             .drive(onNext: { [weak self] error in
-                guard let self = self else { return }
+                guard self != nil else { return }
                 
                 if let error = error {
                     print("Error: \(error)")
@@ -230,6 +228,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
         collectionView.isHidden = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
+        collectionView.reloadData()
         
     }
     
@@ -258,8 +257,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
-        
-        if indexPath.item == catsData.count {
+        let dataCount = searchActive ? searchCatsData.count : catsData.count
+        if indexPath.item == dataCount {
             return CGSize(width: width, height: 60)
         }
         return isGrid ? CGSize(width: (width / 2) - 8, height: 110)
@@ -267,9 +266,18 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cat = catsData[indexPath.row]
-        let catId = cat.id ?? ""
-        let imageUrl = cat.image?.url ?? ""
+        let imageUrl: String
+        let catId: String
+        
+        if searchActive {
+            let cat = searchCatsData[indexPath.row]
+            catId = cat.breeds?.first?.id ?? ""
+            imageUrl = cat.url ?? ""
+        } else {
+            let cat = catsData[indexPath.row]
+            catId = cat.id ?? ""
+            imageUrl = cat.image?.url ?? ""
+        }
         
         let detailVM = CatDetailViewModel(id: catId, imageUrl: imageUrl)
         let detailVC = DetailCatViewController(viewModel: detailVM, favoriteViewModel: self.favoriteViewModel)
@@ -295,7 +303,7 @@ extension HomeViewController: UISearchBarDelegate {
             return
         }
         searchActive = true
-        viewModel.searchCats(breedId: text, limit: 10)
+        viewModel.searchCats(breedId: text)
         searchBar.resignFirstResponder()
     }
     
@@ -328,7 +336,7 @@ extension HomeViewController {
         if searchActive {
             let cat = searchCatsData[indexPath.row]
             let vm = CardCatViewModel(
-                id: cat.id ?? "",
+                id: cat.breeds?.first?.id ?? "",
                 imageUrl: cat.url
             )
             cell.viewModel = vm

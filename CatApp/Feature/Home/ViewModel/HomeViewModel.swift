@@ -17,7 +17,7 @@ protocol HomeViewModelProtocol {
     var errorMessage: Driver<String?> { get }
     
     func fetchCats(limit: Int, page: Int)
-    func searchCats(breedId: String, limit: Int)
+    func searchCats(breedId: String)
     func loadMoreCats()
     
 }
@@ -27,7 +27,7 @@ class HomeViewModel: HomeViewModelProtocol {
     private let apiService: GenerateApiProtocol
     private let disposeBag = DisposeBag()
     
-    private var currentPage = 1
+    private var currentPage = 0
     private var currentLimit = 10
     private var currentBreedId: String? = nil
     
@@ -43,6 +43,7 @@ class HomeViewModel: HomeViewModelProtocol {
     
     init(apiService: GenerateApiProtocol = GenerateApiExt.shared) {
         self.apiService = apiService
+        fetchCats(limit: 10, page: 0)
     }
     
     func fetchCats(limit: Int, page: Int) {
@@ -52,20 +53,15 @@ class HomeViewModel: HomeViewModelProtocol {
         requestCats(limit: limit, page: page)
     }
     
-    func searchCats(breedId: String, limit: Int) {
-        currentLimit = limit
+    func searchCats(breedId: String) {
         currentBreedId = breedId
-        requestSearchCats(breedId: breedId, limit: limit)
+        requestSearchCats(breedId: breedId)
     }
     
     func loadMoreCats() {
-        if let breedId = currentBreedId {
-            currentLimit += 10
-            requestSearchCats(breedId: breedId, limit: currentLimit)
-        } else {
-            currentPage += 1
-            requestCats(limit: currentLimit, page: currentPage)
-        }
+        currentPage += 1
+        currentLimit += 10
+        requestCats(limit: currentLimit, page: currentPage)
     }
     
     private func requestCats(limit: Int, page: Int) {
@@ -84,9 +80,9 @@ class HomeViewModel: HomeViewModelProtocol {
             .disposed(by: disposeBag)
     }
     
-    private func requestSearchCats(breedId: String, limit: Int) {
+    private func requestSearchCats(breedId: String) {
         loadingRelay.accept(true)
-        apiService.getSearchCats(id: breedId, limit: limit)
+        apiService.getSearchCats(id: breedId)
             .subscribe { [weak self] result in
                 guard let self = self else { return }
                 self.loadingRelay.accept(false)
